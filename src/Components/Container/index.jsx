@@ -8,21 +8,22 @@ import ForecastCard from "./ForecastCard";
 import { WeatherContext, useWeather } from "../../Context/main.jsx";
 
 function Container() {
-  const { weather, setWeather, city } = useWeather(WeatherContext);
+  const { setWeather, city } = useWeather(WeatherContext);
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const apiKey = "a2e9b9f042f4421c9d145844222505"; // max 3 days for free api plan
+  const apiKey = "a2e9b9f042f4421c9d145844222505";
+
+  const days = 3; // max 3
 
   useEffect(() => {
     const result = async () => {
       try {
         const { data } = await axios(
-          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&lang=tr`
+          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=${days}&lang=tr`
         );
         setWeather(data);
         setIsLoading(true);
-        console.log(weather);
       } catch (err) {
         console.error(err);
       }
