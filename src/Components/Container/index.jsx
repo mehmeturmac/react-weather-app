@@ -18,7 +18,7 @@ function Container() {
     const result = async () => {
       try {
         const { data } = await axios(
-          `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&lang=tr`
+          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&lang=tr`
         );
         setWeather(data);
         setIsLoading(true);
