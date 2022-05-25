@@ -20,15 +20,15 @@
 
 - `localStorage` kullanımı
 
-- States ve Lifecycle kullanımı
+- `States` ve `Lifecycle` kullanımı
 
-- Dropdown kullanımı
+- `Dropdown` kullanımı
 
 ---
 
 ## Açıklama
 
-Uygulama dropdown ile seçilen şehrin güncel olarak 3 günlük hava durumu değerleri gösterir.(Ücretsiz kullanımda api en fazla 3 güne izin veriyor.)
+Uygulama dropdown ile seçilen şehrin güncel olarak 3 günlük hava durumu değerleri gösterir.(Kullanılan api en fazla 3 güne izin vermektedir.)
 
 ---
 
