@@ -8,7 +8,7 @@
 
 ## Kullanılan Kaynaklar
 
-- Hava durumu bilgileri [www.weatherapi.com](https://www.weatherapi.com) sitesinin sağladığı api kullanılarak `Axios` yardımı ile çekilmiştir.
+- Hava durumu bilgileri [www.openweathermap.org](https://openweathermap.org/) sitesinin sağladığı api kullanılarak `Axios` yardımı ile çekilmiştir.
 
 - Şehir bilgileri [Burak Özdemir](https://gist.github.com/ozdemirburak)in hazırlamış olduğu [countries_in_turkish](https://gist.github.com/ozdemirburak/a9faee0514517124134e32c038352896) json dosyasından alınmıştır.
 
@@ -28,7 +28,7 @@
 
 ## Açıklama
 
-Uygulama dropdown ile seçilen şehrin güncel olarak 3 günlük hava durumu değerleri gösterir.(Kullanılan api en fazla 3 güne izin vermektedir.)
+Uygulama dropdown ile seçilen şehrin güncel olarak 7 günlük hava durumu değerleri gösterir.
 
 ---
 

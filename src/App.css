@@ -9,7 +9,7 @@
 }
 
 .App {
-  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg");
+  background-image: url("/src/Img/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -50,6 +50,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .currentCardBox {
@@ -87,23 +88,23 @@ header {
   width: auto;
   min-width: 180px;
   max-width: 210px;
-  height: 300px;
-  margin: 10px 30px;
+  height: 270px;
+  margin: 5px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px 30px;
   backdrop-filter: blur(2px);
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .ForecastCardBox img {
   width: 100px;
-  display: block;
+  display: flex;
   margin: 0 auto;
 }
 
 .ForecastCardBox h2 {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .foretemp {

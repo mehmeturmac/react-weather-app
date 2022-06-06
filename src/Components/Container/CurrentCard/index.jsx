@@ -1,18 +1,25 @@
 import { WeatherContext, useWeather } from "../../../Context/main";
 
 function CurrentCard() {
-  const { weather } = useWeather(WeatherContext);
+  const { weather, city } = useWeather(WeatherContext);
+
+  const wDesc = weather.daily[0].weather[0].description
+    .split(" ")
+    .map((desc) => `${desc.charAt(0).toUpperCase() + desc.slice(1)}`)
+    .join(" ");
+
   return (
     <div className="currentCard">
       <div className="currentCardBox">
         <img
-          src={"https:" + weather.current.condition.icon}
-          alt={weather.current.condition.text}
+          src={`http://openweathermap.org/img/wn/${weather.daily[0].weather[0].icon}@2x.png`}
+          alt={wDesc}
         />
-        <h1>{weather.location.name}</h1>
-        <h4>{weather.current.condition.text}</h4>
-        <span className="temp">{weather.current.temp_c}&#176;</span>
-        <span className="fTemp">{weather.current.feelslike_c}&#176;</span>
+        <h1>{city.name}</h1>
+        <h5>Bugün</h5>
+        <h2>{wDesc}</h2>
+        <span className="temp">{weather.daily[0].temp.max}&#176;</span>
+        <span className="fTemp">{weather.daily[0].temp.min}&#176;</span>
       </div>
     </div>
   );

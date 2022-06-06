@@ -5,11 +5,14 @@ import citiesData from "../../Data/tr.json";
 function Header() {
   const { city, setCity } = useWeather();
 
-  const date = new Date();
-
   const cityChange = (e) => {
-    setCity(e.target.value);
-    localStorage.setItem("city", e.target.value);
+    citiesData.map((citydata) => {
+      if (citydata.name === e.target.value) {
+        setCity(citydata);
+        localStorage.setItem("city", JSON.stringify(citydata));
+      }
+      return null;
+    });
   };
 
   return (
@@ -18,23 +21,15 @@ function Header() {
         className="cities"
         name="cities"
         id="cities"
-        value={city}
+        value={city.name}
         onChange={cityChange}
       >
-        {citiesData.map((city) => (
-          <option key={city.id} value={city.name}>
-            {city.name}
+        {citiesData.map((citydata) => (
+          <option key={citydata.id} value={citydata.name}>
+            {citydata.name}
           </option>
         ))}
       </select>
-      <span className="time">
-        {"Tarih: " +
-          date.getDate() +
-          "." +
-          (date.getMonth() + 1) +
-          "." +
-          date.getFullYear()}
-      </span>
     </header>
   );
 }

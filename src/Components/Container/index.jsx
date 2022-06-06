@@ -12,15 +12,13 @@ function Container() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const apiKey = "a2e9b9f042f4421c9d145844222505";
-
-  const days = 3; // max 3
+  const apiKey = "2b30cae44fa069dcf92d41a2623404b5"; //"a2e9b9f042f4421c9d145844222505";
 
   useEffect(() => {
     const result = async () => {
       try {
         const { data } = await axios(
-          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=${days}&lang=tr`
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&units=metric&exclude=current,minutely,hourly,alerts&lang=tr&appid=${apiKey}`
         );
         setWeather(data);
         setIsLoading(true);
